@@ -1,0 +1,77 @@
+﻿@page
+@model ServiceCatalogue.Pages.AppPages.DeleteModel
+@{
+
+}
+
+<br />
+
+<h2 class="text-info">Please confirm to delete</h2>
+
+<br />
+
+<div class="border container" style="padding: 30px;">
+    <form method="post">
+        <input type="hidden" asp-for="SystemAsset.Id" />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="SystemAsset.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="SystemAsset.Name" class="form-control" />
+            </div>
+            <span asp-validation-for="SystemAsset.Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="SystemAsset.Website"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="SystemAsset.Website" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="SystemAsset.Wiki"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="SystemAsset.Wiki" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="SystemAsset.LastDeployed"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="SystemAsset.LastDeployed" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-4">
+                <label>Server Name</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="SystemAsset.ServerAssets.ServerName" class="form-control" />
+                    
+            </div>
+        </div>
+
+
+
+            <div class="form-group row">
+                <div class="col-3 offset-4">
+                    <button type="submit" value="Delete" class="btn btn-danger form-control">Delete</button>
+                </div>
+                <div class="col-3">
+                    <a asp-page="/Index" class="btn btn-success form-control">Back to list</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\rumen.dimov\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\rumen.dimov\\.nuget\\packages"
+    ]
+  }
+}

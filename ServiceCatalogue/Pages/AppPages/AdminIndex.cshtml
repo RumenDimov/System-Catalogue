@@ -1,0 +1,70 @@
+﻿@page
+@model ServiceCatalogue.Pages.AppPages.AdminIndexModel
+@{
+}
+
+<br />
+<h2 class="text-center">Server Asset Registry</h2>
+
+<hl></hl>
+
+<div class="container p-3">
+    @if (Model.ServerAsset.Count() > 0)
+    {
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th>
+                        <label>Name</label>
+                    </th>
+                    <th>
+                        <label>Active</label>
+                    </th>
+                    <th>
+                        <label>Role</label>
+                    </th>
+
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.ServerAsset)
+            {
+               
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(e => item.ServerName)
+                    </td>
+                    
+                        @if(item.Active == true) {
+                            <td>Yes</td>    
+                    }
+                    else
+                    {
+                            <td>No</td>
+                    }
+
+                
+                    <td>
+                        @Html.DisplayFor(e => item.Apps.Role)
+                    </td>
+
+                   
+                    <td>
+                        <a class="btn btn-danger btn-sm" asp-page="Admin/DeleteAdmin" asp-route-id="@item.Id">Delete</a>
+                        <a asp-page="Admin/UpdateAdmin" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Update</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>No data available</p>
+    }
+</div>

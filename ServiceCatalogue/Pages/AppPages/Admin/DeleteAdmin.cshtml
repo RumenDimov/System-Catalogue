@@ -1,0 +1,60 @@
+﻿@page
+@model ServiceCatalogue.Pages.AppPages.Admin.DeleteAdminModel
+@{
+}
+
+<br />
+
+<h2 class="text-info">Please confirm to delete</h2>
+
+<br />
+
+<div class="border container" style="padding: 30px;">
+    <form method="post">
+        <input type="hidden" asp-for="ServerAsset.Id" />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label>Server Name</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="ServerAsset.ServerName" class="form-control" />
+            </div>
+            <span asp-validation-for="ServerAsset.ServerName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-4">
+                <label>Active</label>
+            </div>
+            <div class="col-6">
+                <input type="checkbox" asp-for="ServerAsset.Active" />
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-4">
+                <label>Role</label>
+            </div>
+            <div class="col-6">
+
+                <input asp-for="ServerAsset.Apps.Role" class="form-control"/>
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="form-group row">
+            <div class="col-3 offset-4">
+                <button type="submit" value="DeleteAdmin" class="btn btn-danger form-control">Delete</button>
+            </div>
+            <div class="col-3">
+                <a asp-page="../AdminIndex" class="btn btn-success form-control">Back to list</a>
+            </div>
+        </div>
+    </form>
+</div>
